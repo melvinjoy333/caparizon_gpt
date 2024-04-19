@@ -1,0 +1,42 @@
+body {
+    background-color: #020631 !important;
+}
+
+.cz-gpt-app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cz-container {
+    width: 700px;
+}
+
+.cz-user {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.cz-system {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+.cz-input-container {
+    display: flex;
+    justify-content: center;
+}
+
+.cz-input-grp {
+    width: 700px !important;
+}
+
+.cz-system-container {
+    background-color: white;
+    min-width: 300px;
+    border: 2px solid white;
+    border-radius: 25px;
+    padding: 6px;
+}

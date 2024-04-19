@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import "./App.css";
+import "./Assets/CSS/cz-style.css";
 import User from "./Components/User";
 import InputBox from "./Components/InputBox";
 import System from "./Components/System";
@@ -16,27 +16,19 @@ function App() {
           { role: "user", content: inputData },
         ],
       };
-
-      const response = await axios.post(
-        "http://0.0.0.0:5002/api/chat",
-        payload
-      );
-      console.log("response", response?.data);
-
+      const response = await axios.post(`${process.env.REACT_APP_BASE_URL}api/chat`, payload);
       setConversation(response?.data);
     } catch (error) {
       console.log("error", error);
     }
   };
+  
   return (
-    <div
-      className="gpt-App"
-      style={{ display: "flex", alignItems: "center", flexDirection: "column" }}
-    >
+    <div className="cz-gpt-app">
       <div>
         <h2>GPT</h2>
       </div>
-      <div style={{ width: "700px" }}>
+      <div className="cz-container">
         <InputBox handleSendCallBack={handleSendCallBack} />
         <div>
           {conversation
@@ -45,14 +37,14 @@ function App() {
             .map((obj, idx) => {
               if (obj.role === "user") {
                 return (
-                  <div style={{ display: "flex", justifyContent: "flex-end", marginTop:"10px" }}>
+                  <div className="cz-user">
                     <User data={obj} key={idx} />
                   </div>
                 );
               } else {
                 return (
                   <div
-                    style={{ display: "flex", justifyContent: "flex-start", marginTop:"10px"  }}
+                  className="cz-system"
                   >
                     <System data={obj} key={idx} />
                   </div>

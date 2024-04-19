@@ -16,8 +16,8 @@ const InputBox = ({ handleSendCallBack }: Props) => {
     setInputVal("");
   };
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
-      <InputGroup style={{ width: "700px" }}>
+    <div className="cz-input-container">
+      <InputGroup className="cz-input-grp">
         <Form.Control
           placeholder="Please enter your query"
           value={inputVal}
