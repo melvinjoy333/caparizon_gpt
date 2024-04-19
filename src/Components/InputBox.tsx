@@ -15,6 +15,13 @@ const InputBox = ({ handleSendCallBack }: Props) => {
     handleSendCallBack(inputVal);
     setInputVal("");
   };
+
+  const handleKeyDown = (event: any) => {
+    if (event.key === "Enter") {
+      handleSendCallBack(inputVal);
+      setInputVal("");
+    }
+  };
   return (
     <div className="cz-input-container">
       <InputGroup className="cz-input-grp">
@@ -22,6 +29,7 @@ const InputBox = ({ handleSendCallBack }: Props) => {
           placeholder="Please enter your query"
           value={inputVal}
           onChange={handleChange}
+          onKeyUp={handleKeyDown}
         />
         <Button variant="outline-secondary" onClick={handleSend}>
           Send
