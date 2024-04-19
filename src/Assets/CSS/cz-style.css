@@ -30,7 +30,7 @@ body {
     justify-content: center;
 }
 
-.cz-system-container {
+.cz-user-container {
     background-color: #FEFAF6;
     min-width: 300px;
     border: 2px solid #FEFAF6;
@@ -38,7 +38,7 @@ body {
     padding: 6px;
 }
 
-.cz-user-container {
+.cz-system-container {
     background-color: #DAC0A3;
     min-width: 300px;
     border: 2px solid #DAC0A3;
